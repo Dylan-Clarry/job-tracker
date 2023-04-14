@@ -9,3 +9,11 @@ datasource db {
   provider = "sqlite"
   url      = env("DATABASE_URL")
 }
+
+model jobs {
+    id          String  @id @default(cuid())
+    companyName String
+    jobTitle    String
+    description String
+    email       String
+}
