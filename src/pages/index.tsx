@@ -1,12 +1,45 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
+import { useState } from "react";
+import { Job } from "@/types.ts";
 
-const inter = Inter({ subsets: ['latin'] })
+function getTestData(): Job[] {
+    return [
+        {
+            id: "0",
+            companyName: "Google",
+            jobTitle: "Beeg Dev",
+            description: "Massive job opportunity.",
+            email: "email@gmail.com",
+        },
+        {
+            id: "1",
+            companyName: "Porter Johns",
+            jobTitle: "John #3",
+            description: "Be the best John you can be",
+            email: "johndle@jonathon.com",
+        },
+        {
+            id: "2",
+            companyName: "iPhone",
+            jobTitle: "Apple Man",
+            description: "Who waht to be an Apple man?",
+            email: "Apple@apple.apple",
+        },
+    ];
+}
 
 export default function Home() {
-  return (
-    <main className="flex min-h-screen text-xl flex-col items-center justify-between p-24">
-      <h1>Job Tracker</h1>
-    </main>
-  )
+    const [jobList, setJobList] = useState<Job[]>([]);
+
+    return (
+        <main className="flex flex-col text-xl items-center justify-between pt-8">
+            <h1>Job Tracker</h1>
+            {getTestData().map((job) => (
+                <div className="mt-4">
+                    <h1 className="text-lg">{job.jobTitle}</h1>
+                    <p className="text-sm">{job.companyName + " - " + job.email}</p>
+                    <p className="text-sm">{job.description}</p>
+                </div>
+            ))}
+        </main>
+    );
 }
