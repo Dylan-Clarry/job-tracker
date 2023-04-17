@@ -11,9 +11,10 @@ datasource db {
 }
 
 model jobs {
-    id          String  @id @default(cuid())
+    id          String      @id @default(cuid())
     companyName String
     jobTitle    String
     description String
     email       String
+    createdAt   DateTime    @default(now())
 }

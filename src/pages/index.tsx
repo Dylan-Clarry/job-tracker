@@ -35,9 +35,7 @@ export default function Home() {
             <h1>Job Tracker</h1>
             {getTestData().map((job) => (
                 <div className="mt-4">
-                    <h1 className="text-lg">{job.jobTitle}</h1>
-                    <p className="text-sm">{job.companyName + " - " + job.email}</p>
-                    <p className="text-sm">{job.description}</p>
+                    <h1 className="text-lg">{job.jobTitle + " - " + job.companyName}</h1>
                 </div>
             ))}
         </main>
