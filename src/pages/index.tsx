@@ -9,6 +9,7 @@ function getTestData(): Job[] {
             jobTitle: "Beeg Dev",
             description: "Massive job opportunity.",
             email: "email@gmail.com",
+            dateApplied: "April 11 2023"
         },
         {
             id: "1",
@@ -16,6 +17,7 @@ function getTestData(): Job[] {
             jobTitle: "John #3",
             description: "Be the best John you can be",
             email: "johndle@jonathon.com",
+            dateApplied: "April 13 2023"
         },
         {
             id: "2",
@@ -23,6 +25,7 @@ function getTestData(): Job[] {
             jobTitle: "Apple Man",
             description: "Who waht to be an Apple man?",
             email: "Apple@apple.apple",
+            dateApplied: "April 12 2023"
         },
     ];
 }
@@ -35,7 +38,7 @@ export default function Home() {
             <h1>Job Tracker</h1>
             {getTestData().map((job) => (
                 <div className="mt-4">
-                    <h1 className="text-lg">{job.jobTitle + " - " + job.companyName}</h1>
+                    <h1 className="text-lg">{job.jobTitle + " - " + job.companyName + " (" + job.dateApplied + ")"}</h1>
                 </div>
             ))}
         </main>

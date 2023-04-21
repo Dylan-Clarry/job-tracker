@@ -4,4 +4,5 @@ export type Job = {
     jobTitle: String;
     description: String;
     email: String;
+    dateApplied: String;
 };
